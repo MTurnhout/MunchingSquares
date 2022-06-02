@@ -1,3 +1,3 @@
 # Munching squares
 
-https://htmlpreview.github.io/?https://github.com/MTurnhout/TheMunchingSquare/blob/master/TheMunchingSquareCanvas.html
+https://htmlpreview.github.io/?https://github.com/MTurnhout/MunchingSquares/blob/master/MunchingSquares.html
