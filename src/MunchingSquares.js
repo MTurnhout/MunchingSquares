@@ -13,8 +13,8 @@ class MunchingSquares {
 
   drawFrame() {
     const canvas = this.#canvasContext2d.canvas;
-    const cellWidth = canvas.width / MunchingSquares.#maxCells;
-    const cellHeight = canvas.height / MunchingSquares.#maxCells;
+    const cellWidth = Math.floor(canvas.width / MunchingSquares.#maxCells);
+    const cellHeight = Math.floor(canvas.height / MunchingSquares.#maxCells);
 
     this.#canvasContext2d.fillStyle = "black";
     this.#canvasContext2d.fillRect(0, 0, canvas.width, canvas.height);
