@@ -2,7 +2,7 @@ class MunchingSquares {
   static #maxCells = 64;
 
   #canvasContext2d;
-  #count = 1;
+  #count = 0;
 
   /**
    * @param {CanvasRenderingContext2D} canvasContext2d
@@ -20,21 +20,18 @@ class MunchingSquares {
     this.#canvasContext2d.fillRect(0, 0, canvas.width, canvas.height);
 
     this.#canvasContext2d.fillStyle = "white";
-    for (let y = 0; y < MunchingSquares.#maxCells; y++) {
-      for (let x = 0; x < MunchingSquares.#maxCells; x++) {
-        if (y === (x ^ this.#count)) {
-          this.#canvasContext2d.fillRect(
-            x * cellWidth,
-            y * cellHeight,
-            cellWidth,
-            cellHeight
-          );
-        }
-      }
+    for (let x = 0; x < MunchingSquares.#maxCells; x++) {
+      const y = x ^ this.#count;
+      this.#canvasContext2d.fillRect(
+        x * cellWidth,
+        y * cellHeight,
+        cellWidth,
+        cellHeight
+      );
     }
 
     if (this.#count >= MunchingSquares.#maxCells) {
-      this.#count = 1;
+      this.#count = 0;
     } else {
       this.#count++;
     }
