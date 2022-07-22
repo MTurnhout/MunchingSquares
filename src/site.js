@@ -1,4 +1,4 @@
-import { MunchingSquaresRenderer } from "./js/MunchingSquaresRenderer.js";
+import { MunchingSquaresRenderer } from "./MunchingSquaresRenderer.js";
 
 window.addEventListener("load", () => {
   const canvasElement = document.querySelector("canvas");
