@@ -1,5 +1,5 @@
 /**
- * WebGL vertex shader where position of the vertexes is set directly.
+ * WebGL vertex shader that allows for translation of the position.
  */
 const vertexShaderSource = `
 attribute vec2 a_position;
@@ -11,7 +11,7 @@ void main() {
 `;
 
 /**
- * WebGL fragment shader
+ * WebGL fragment shader that sets the color to white.
  */
 const fragmentShaderSource = `
 precision mediump float;
@@ -151,9 +151,8 @@ function setupVertexShaderData(
 }
 
 /**
- * Updates the canvas size/resolution, viewport and resolution uniform variable.
+ * Updates the canvas size/resolution and viewport.
  * @param gl The WebGL rendering context.
- * @param program The WebGL program.
  * @param canvas The HTML canvas element.
  */
 function updateCanvasSize(
@@ -169,7 +168,7 @@ function updateCanvasSize(
 }
 
 /**
- * Starts the animation loop, updating the time uniform variable and drawing triangles.
+ * Starts the animation loop, updating the position of the cells.
  * @param gl The WebGL rendering context.
  * @param program The WebGL program.
  */

@@ -1,9 +1,9 @@
 /**
- * WebGL vertex shader where position of the vertexes is set directly.
+ * WebGL vertex shader that allows for translation of the position.
  */
 var vertexShaderSource = "\nattribute vec2 a_position;\nuniform vec2 u_translation;\n\nvoid main() {\n    gl_Position = vec4(a_position + u_translation, 0.0, 1.0);\n}\n";
 /**
- * WebGL fragment shader
+ * WebGL fragment shader that sets the color to white.
  */
 var fragmentShaderSource = "\nprecision mediump float;\n\nvoid main() {\n    gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);\n}\n";
 var maxCells = 64;
@@ -101,9 +101,8 @@ function setupVertexShaderData(gl, program) {
     gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0);
 }
 /**
- * Updates the canvas size/resolution, viewport and resolution uniform variable.
+ * Updates the canvas size/resolution and viewport.
  * @param gl The WebGL rendering context.
- * @param program The WebGL program.
  * @param canvas The HTML canvas element.
  */
 function updateCanvasSize(gl, canvas) {
@@ -114,7 +113,7 @@ function updateCanvasSize(gl, canvas) {
     gl.viewport(0, 0, canvas.width, canvas.height);
 }
 /**
- * Starts the animation loop, updating the time uniform variable and drawing triangles.
+ * Starts the animation loop, updating the position of the cells.
  * @param gl The WebGL rendering context.
  * @param program The WebGL program.
  */
