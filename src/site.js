@@ -27,7 +27,7 @@ function main() {
     window.addEventListener("resize", function () {
         updateCanvasSize(gl, canvas);
     });
-    startAnimation(gl, program, performance.now());
+    startAnimation(gl, program);
 }
 /**
  * Creates a WebGL shader from the provided source code and type.
@@ -118,10 +118,11 @@ function updateCanvasSize(gl, canvas) {
  * @param gl The WebGL rendering context.
  * @param program The WebGL program.
  */
-function startAnimation(gl, program, startTime) {
+function startAnimation(gl, program) {
     var translationLocation = gl.getUniformLocation(program, "u_translation");
     gl.clearColor(0.0, 0.0, 0.0, 1.0);
     // Start the animation loop
+    var startTime = performance.now();
     var render = function (currentTime) {
         var elapsedTime = currentTime - startTime;
         var animationFrame = Math.floor(elapsedTime / 100) % maxCells;

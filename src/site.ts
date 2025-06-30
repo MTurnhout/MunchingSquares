@@ -57,7 +57,7 @@ function main(): void {
     updateCanvasSize(gl, canvas);
   });
 
-  startAnimation(gl, program, performance.now());
+  startAnimation(gl, program);
 }
 
 /**
@@ -175,14 +175,14 @@ function updateCanvasSize(
  */
 function startAnimation(
   gl: WebGLRenderingContext,
-  program: WebGLProgram,
-  startTime: DOMHighResTimeStamp
+  program: WebGLProgram
 ): void {
   const translationLocation = gl.getUniformLocation(program, "u_translation");
 
   gl.clearColor(0.0, 0.0, 0.0, 1.0);
 
   // Start the animation loop
+  const startTime = performance.now();
   const render = (currentTime: DOMHighResTimeStamp) => {
     const elapsedTime = currentTime - startTime;
     const animationFrame = Math.floor(elapsedTime / 100) % maxCells;
